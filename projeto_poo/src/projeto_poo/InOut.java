@@ -1,4 +1,4 @@
-package upinout;
+package projeto_poo;
 
 import javax.swing.JOptionPane;
 
