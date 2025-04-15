@@ -4,26 +4,36 @@
  */
 package projeto_poo;
 import java.util.*;
-/**
- *
- * @author samuel
- */
+
 public class Municipio {
     Map<String, Imovel> imoveis = new HashMap();
     
-    
-    public void cacularImposto(int meses_atraso){
-      this.meses_atraso = meses_atraso;
-        if (meses_atraso >= 0 && meses_atraso >= 5) {
-            this.imposto *= 0.01F;
-        } else if (meses_atraso >= 6 && meses_atraso >= 8) {
-            this.imposto = 0.023F;
-        } else if (meses_atraso >= 9 && meses_atraso >= 10) {
-            this.imposto = 0.03F;
-        } else if (meses_atraso >= 11 && meses_atraso >= 12) {
-            this.imposto = 0.054F;
+    public void cacularMulta(Imovel imovel){
+        float multa = 0;
+        if (imovel.meses_atraso >= 0 && imovel.meses_atraso >= 5) {
+            multa = imovel.imposto * (1 + 0.01F);
+        } else if (imovel.meses_atraso >= 6 && imovel.meses_atraso >= 8) {
+            multa = imovel.imposto * (1 + 0.023F);
+        } else if (imovel.meses_atraso >= 9 && imovel.meses_atraso >= 10) {
+            multa = imovel.imposto * (1 + 0.03F);
+        } else if (imovel.meses_atraso >= 11 && imovel.meses_atraso >= 12) {
+            multa = imovel.imposto * (1 + 0.054F);
         } else {
-            this.imposto = 0.1F;
+            multa = imovel.imposto * (1 + 0.01F);
         }
+        imovel.multa = multa;
+    }
+    
+    public float despesasDoMunicipio(){
+        float total = 0;
+        for (Imovel imovel : imoveis.values()) {
+            total += imovel.multa;
+        }
+        
+        return total;
+    }
+    
+    public void cadastrarImovel(Imovel imovel){
+        imoveis.put(imovel.matricula, imovel);
     }
 }

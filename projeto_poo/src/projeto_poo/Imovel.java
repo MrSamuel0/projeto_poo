@@ -13,8 +13,9 @@ public class Imovel {
     String nome;
     Float imposto;
     int meses_atraso;
-    
-    public void Imovel(String matricula, String nome, int meses, Float imposto) {
+    Float multa;
+
+    public Imovel(String matricula, String nome, int meses, Float imposto) {
         this.matricula = matricula;
         this.nome = nome;
         this.meses_atraso = meses;
