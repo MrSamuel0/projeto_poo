@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package projeto_poo;
+package Iptu;
 import java.util.*;
 
 public class Municipio {
@@ -36,4 +36,7 @@ public class Municipio {
     public void cadastrarImovel(Imovel imovel){
         imoveis.put(imovel.matricula, imovel);
     }
+    
+    
+    
 }

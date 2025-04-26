@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package projeto_poo;
+package Iptu;
+import Bet_poo.InOut;
 import java.util.*;
 import java.text.DecimalFormat;
 /**
@@ -12,12 +13,12 @@ import java.text.DecimalFormat;
 public class projeto_poo {
     public static void main(String[] args) {
         DecimalFormat df = new DecimalFormat("#.00");
-        Imovel geladeira = new Imovel("01A", "Geladeira", 5, 2.80F);
-        Imovel fogao = new Imovel("02A", "Fogão", 7, 5.00F);
-        Imovel ar_condicionado = new Imovel("03A", "Ar condicionado", 9, 6.20F);
-        Imovel cama = new Imovel("04A", "Cama", 11, 8.30F);
-        Imovel micro_ondas = new Imovel("05A", "Micro-ondas", 12, 10.10F);
-        Imovel televisao = new Imovel("06A", "Televisão", 14, 12.50F);
+        Imovel geladeira = new Imovel("01A", "Geladeira", 5, 2.80F, 100);
+        Imovel fogao = new Imovel("02A", "Fogão", 7, 5.00F, 500);
+        Imovel ar_condicionado = new Imovel("03A", "Ar condicionado", 9, 6.20F, 80);
+        Imovel cama = new Imovel("04A", "Cama", 11, 8.30F, 150);
+        Imovel micro_ondas = new Imovel("05A", "Micro-ondas", 12, 10.10F, 120);
+        Imovel televisao = new Imovel("06A", "Televisão", 14, 12.50F, 40);
         Municipio vila_velha = new Municipio();
         vila_velha.cadastrarImovel(geladeira);
         vila_velha.cadastrarImovel(fogao);
@@ -26,8 +27,8 @@ public class projeto_poo {
         vila_velha.cadastrarImovel(micro_ondas);
         vila_velha.cadastrarImovel(televisao);
         vila_velha.cacularMulta(geladeira);
-        despesas = vila_velha.despesasDoMunicipio();
-        
+        Float despesas = vila_velha.despesasDoMunicipio();
+    
         InOut.MsgDeInformacao("test", df.format(geladeira.multa));
         InOut.MsgDeInformacao("test", df.format(despesas));
     }
