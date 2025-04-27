@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Iptu;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Municipio {
@@ -34,7 +35,20 @@ public class Municipio {
     }
     
     public void cadastrarImovel(Imovel imovel){
-        imoveis.put(imovel.matricula, imovel);
+        imoveis.put(imovel.codImovel, imovel);
+    }
+    
+    public void buscarImovel (String codigo) {
+        DecimalFormat df = new DecimalFormat("#.00");
+        Imovel imovel = imoveis.get(codigo);
+        
+        InOut.MsgDeInformacao(
+        "Imóvel Cadastrado", 
+        "Código: " + imovel.codImovel +
+        "\nNome: " + imovel.nome +
+        "\nMeses de Atraso: " + imovel.meses_atraso +
+        "\nÁrea: " + imovel.area +
+        "\nValor Multa: " + df.format(imovel.multa));
     }
     
     

@@ -1,7 +1,7 @@
 package Iptu;
 
 public class Imovel {
-    String matricula;
+    String codImovel;
     String nome;
     float imposto;
     int meses_atraso;
@@ -23,8 +23,8 @@ public class Imovel {
         
     }
 
-    public Imovel(String matricula, String nome, int meses, Float imposto, int area) {
-        this.matricula = matricula;
+    public Imovel(String codigo, String nome, int meses, int area) {
+        this.codImovel = codigo;
         this.nome = nome;
         this.meses_atraso = meses;
         this.area = area;

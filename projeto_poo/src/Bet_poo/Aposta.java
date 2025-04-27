@@ -15,10 +15,14 @@ public class Aposta {
     int quantidade;
     List<Jogo> jogos = new ArrayList(10);
     
-    public Aposta(Double valor, int quant, List<Jogo> jogos) {
+    public Aposta(Double valor, int quant) {
         this.valorAposta = valor;
         this.quantidade = quant;
         this.jogos = jogos;
+    }
+    
+    public void adcionarJogo(Jogo jogo) {
+        jogos.add(jogo);
     }
     
     public void visualizarJogos() {
