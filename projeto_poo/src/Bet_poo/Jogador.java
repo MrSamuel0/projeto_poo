@@ -24,7 +24,7 @@ public class Jogador {
         apostas.add(aposta);
     }
     
-    public void main(String[] args) {
+    public void main() {
         Credito creditoJogador = new Credito(300.00, "1 mes", "Real",false);
         this.credito = creditoJogador;
         
@@ -57,8 +57,13 @@ public class Jogador {
         
         if (totalApostas > this.credito.saldo) {
             InOut.MsgDeAviso("Saldo insuficiente", "Seu saldo e: " + this.credito.saldo);
+            
+        } else {
+            this.credito.saldo -= totalApostas;
+            
         }
+                
         
-        this.credito.saldo -= totalApostas;
+        
     }
 }

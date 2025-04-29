@@ -12,7 +12,9 @@ public class main {
     public static void main(String[] args) {
         Jogador jg01 = new Jogador();
         
-        jg01.main(args);
+        jg01.main();
+        
+        jg01.menu();
         
         InOut.MsgDeAviso("jogador", jg01.credito.saldo.toString());
     }
